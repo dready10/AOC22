@@ -25,8 +25,8 @@ int item_value(int item) {
 // The function for part 1. We go through the first half of each line and mark
 // each character we see as seen. Then we go through the second half of each
 // line and, as soon as we see a character we've already seen, that's the dup.
-int get_duplicate_item(char *buf, int length) {
-    int *seen = calloc(sizeof(int), 53);
+int get_duplicate_item(char* buf, int length) {
+    int* seen = calloc(sizeof(int), 53);
     
     for(int i = 0; i < length / 2; i++) {
         seen[item_value(buf[i])] = true;
@@ -78,7 +78,7 @@ int get_group_item(char** bufs) {
             return i;
         }
     }
-    printf("No dup found.");
+    printf("get_group_item: No duplicate found. Buffer 1: %s\n", bufs[0]);
     return 0;
 }
 
