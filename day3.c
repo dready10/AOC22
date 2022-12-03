@@ -54,7 +54,6 @@ int get_group_item(char** bufs) {
     int** seen = malloc(sizeof(int*) * GROUP_SIZE);
     for (int i = 0; i < GROUP_SIZE; i++) {
         seen[i] = calloc(sizeof(int), 53);
-
     }
 
     for (int i = 0; i < GROUP_SIZE; i++) {
