@@ -78,6 +78,10 @@ int get_group_item(char** bufs) {
         }
     }
     printf("get_group_item: No duplicate found. Buffer 1: %s\n", bufs[0]);
+    for (int i = 0; i < GROUP_SIZE; i++) {
+        free(seen[i]);
+    }
+    free(seen);
     return 0;
 }
 
