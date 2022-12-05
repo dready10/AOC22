@@ -45,7 +45,7 @@ void add_to_column(column *column, char addition) {
 // Pops a container off the top of the column.
 char pop_from_column(column *column) {
     if (column->length <= 0) {
-        printf("pop_from_column: trying to pop from empty column.");
+        printf("pop_from_column: trying to pop from empty column.\n");
         return '\0';
     }
     char ret = column->containers[column->length-1];
@@ -73,6 +73,7 @@ void p2_move_containers(column *from, column *to, int number) {
     for(int i = 0; i < number; i++) {
         add_to_column(to, moves[i]);
     }
+    free(moves);
 }
 
 // The container labels occur in the 1st and every 4th thereafter column of
@@ -139,12 +140,11 @@ int main() {
     char buf[100];
     int i = 0;
     while(fgets(buf, 100, f)) {
-        char *tok = strtok(buf, " ");
-        int number = atoi(strtok(NULL, " "));
-        strtok(NULL, " ");
-        int from = atoi(strtok(NULL, " ")) - 1;
-        strtok(NULL, " ");
-        int to = atoi(strtok(NULL, "\n")) - 1;
+        int number, from, to;
+
+        sscanf(buf, "move %d from %d to %d\n", &number, &from, &to);
+        from--, to--;
+
         p1_move_containers(&p1_columns[from], &p1_columns[to], number);
         p2_move_containers(&p2_columns[from], &p2_columns[to], number);
     }
@@ -170,4 +170,3 @@ int main() {
     free(p2_columns);
     return 0;
 }
-    
