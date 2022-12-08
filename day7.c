@@ -20,7 +20,7 @@ typedef struct fs_entry {
 } fs_entry;
 
 fs_entry *root; // duh
-fs_entry *cur_dir; // program state cd command requires
+fs_entry *cur_dir; // program state cd command requirement
 
 // This is just a utility function that makes sure we can have
 // an unlimited number of children in any given dir.
