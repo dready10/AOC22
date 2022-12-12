@@ -48,9 +48,9 @@ unsigned long operate(char *operation, unsigned long old) {
     exit(1);
 }
 
-// Helper function that removes the item being throw in index i
+// Helper function that removes the item being thrown in index i
 // from monkey "from" and adds it to the end of the queue in
-// monkey "to". Not terribly efficient beacuse monkey->items
+// monkey "to". Not terribly efficient because monkey->items
 // is just an array and not a true queue, but it's fast enough
 // for this problem.
 void throw_item(int index_from, monkey *from, monkey *to) {
@@ -114,7 +114,7 @@ int main() {
     monkey **monkeys = malloc(sizeof(monkey*) * 1024);
     int number_of_monkeys = 0;
 
-    // Parse all the input and setup the data structures.
+    // Parse all the input and set up the data structures.
     while(fgets(buf, 1024, f)) {
         if (buf[0] == 'M') {
             monkeys[number_of_monkeys++] = new_monkey(atoi(&buf[7]));
