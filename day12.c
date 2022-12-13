@@ -16,7 +16,7 @@ typedef struct map {
     short **map;
 } map;
 
-// Take the top of the stack and look around at each adjacend node. If you can
+// Take the top of the stack and look around at each adjacent node. If you can
 // step there and it hasn't been visited, record that it takes X + 1 steps to 
 // get there (where X is the steps it took to get to the current node).
 // If it HAS been visited, but X + 1 is less than the number of steps it took
